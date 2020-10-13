@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+}
+.header h1 {
+  text-align: center;
+}
+
+.main__table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.main__table td {
+  border: 1px solid #cfcfcf;
+}
+.main__table th, .main__table td {
+  text-align: left;
+  padding: 8px;
+}
+.main__table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/*# sourceMappingURL=main.css.map */

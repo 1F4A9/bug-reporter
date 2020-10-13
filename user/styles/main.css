@@ -1,0 +1,158 @@
+body .main__form--item:last-child, body .main__form, body .main__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #929776;
+}
+body .main {
+  width: 50%;
+  height: 90%;
+  background-color: #c8c5b4;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 30px 0px rgba(0, 0, 0, 0.5);
+}
+body .main__header {
+  width: 100%;
+  height: 10%;
+}
+body .main__header h2 {
+  margin: 0;
+  padding: 0;
+}
+body .main__form {
+  width: 100%;
+  height: 90%;
+}
+body .main__form--item {
+  width: 100%;
+  height: 12%;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid black;
+}
+body .main__form--item:nth-last-child(2) {
+  height: 30%;
+  padding-top: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+body .main__form--item:nth-last-child(2) .main__form--item--divider {
+  width: 1px;
+  height: 25%;
+  background-color: black;
+}
+body .main__form--item--divider {
+  width: 1px;
+  height: 50%;
+  background-color: black;
+}
+body .main__form--item:last-child {
+  border: none;
+}
+body .main__form--item:last-child .main__form__submit {
+  height: 80%;
+  width: 95%;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  background-color: #545c4a;
+  border-radius: 0.5rem;
+}
+body .main__form--item:last-child .main__form__submit:hover {
+  background-color: #af8a7a;
+}
+body .main__form--item--customselect {
+  margin-left: 20px;
+  width: 70%;
+  height: 80%;
+  border: none;
+  position: relative;
+}
+body .main__form--item--customselect select {
+  border-radius: 3px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+}
+body .main__form--item--customselect--arrows {
+  display: block;
+  background-color: #545c4a;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  height: 100%;
+  width: 2rem;
+  pointer-events: none;
+}
+body .main__form--item--customselect--arrows::before, body .main__form--item--customselect--arrows::after {
+  --size: 0.5em;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .main__form--item--customselect--arrows::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid #c8c5b4;
+  top: 40%;
+}
+body .main__form--item--customselect--arrows::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid #c8c5b4;
+  top: 63%;
+}
+body .main__form form {
+  width: 90%;
+  height: 90%;
+}
+body .main__form form label {
+  min-width: 15%;
+  padding: 0 1rem;
+  font-weight: bold;
+}
+body .main__form form input {
+  margin-left: 20px;
+  width: 70%;
+  height: 80%;
+  background-color: transparent;
+  border: none;
+}
+body .main__form form textarea {
+  margin-left: 20px;
+  width: 70%;
+  height: 80%;
+  resize: none;
+  background-color: transparent;
+  border: none;
+}
+body .main__form form input,
+body .main__form form textarea,
+body .main__form form select {
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */
