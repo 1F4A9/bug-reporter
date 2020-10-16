@@ -3,11 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/normalize.css">
   <link rel="stylesheet" href="./styles/main.css" />
+  <script src="script.js" defer></script>
 
   <title>User</title>
 </head>
@@ -20,7 +23,8 @@
       <h2>BUG-Reporter</h2>
     </div>
     <div class="main__form">
-      <form action="/" method="POST" enctype="multipart/form-data">
+      <!-- action="http://localhost:5000/bug" method="POST" enctype="multipart/form-data" -->
+      <form>
 
         <div class="main__form--item">
           <label for="name"> Name:</label>
@@ -47,7 +51,7 @@
           <div class="main__form--item--divider"></div>
           <div class="main__form--item--customselect">
             <select name="prio" id="prio">
-              <option value="">--Hur hög priorotet har felet--</option>
+              <option value="">--Hur hög priorotet har felet?--</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>

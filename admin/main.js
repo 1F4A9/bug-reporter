@@ -1,30 +1,33 @@
-import { data } from '../db/data.js';
+import { data } from "../db/data.js";
+// import("../db/data.js").then(({ data }) => {
+//   console.log(data);
+// });
 
 generateTable();
 
 function createHyperlink(value) {
-  const a = document.createElement('a');
+  const a = document.createElement("a");
   const textNode = document.createTextNode(value);
 
-  a.setAttribute('href', value);
-  a.setAttribute('target', '_blank');
+  a.setAttribute("href", value);
+  a.setAttribute("target", "_blank");
   a.appendChild(textNode);
 
   return a;
 }
 
 function generateTable() {
-  const table = document.getElementById('table-tbody');
+  const table = document.getElementById("table-tbody");
 
   for (let obj of data) {
-    const tr = document.createElement('tr');
+    const tr = document.createElement("tr");
 
     for (let property in obj) {
-      const td = document.createElement('td');
+      const td = document.createElement("td");
 
       const textNode = document.createTextNode(obj[property]);
 
-      if (property === 'link' || property === 'image') {
+      if (property === "link" || property === "image") {
         td.appendChild(createHyperlink(obj[property]));
       } else {
         td.appendChild(textNode);
