@@ -3,11 +3,11 @@ import { data } from '../server/data.js';
 generateTable();
 
 function createHyperlink(value) {
-  const a = document.createElement('a');
+  const a = document.createElement("a");
   const textNode = document.createTextNode(value);
 
-  a.setAttribute('href', value);
-  a.setAttribute('target', '_blank');
+  a.setAttribute("href", value);
+  a.setAttribute("target", "_blank");
   a.appendChild(textNode);
 
   return a;
@@ -77,12 +77,13 @@ function onDelete(e) {
 }
 
 function generateTable() {
-  const table = document.getElementById('table-tbody');
+  const table = document.getElementById("table-tbody");
 
   for (let obj of data) {
-    const tr = document.createElement('tr');
+    const tr = document.createElement("tr");
 
     for (let property in obj) {
+
       // Won´t add ID as a td row.
       if (property !== '_id') {
         const td = document.createElement('td');

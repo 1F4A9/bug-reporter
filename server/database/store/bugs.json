@@ -1,0 +1,78 @@
+[
+  {
+    "id": "0e34800b-7472-4421-ab29-e761cb0ae09a",
+    "text": {
+      "name": "Daniel",
+      "link": "https://www.google.se/?hl=sv",
+      "prio": "5",
+      "comment": "Testing"
+    },
+    "file": {
+      "fieldname": "image",
+      "originalname": "IMG_0970.jpg",
+      "encoding": "7bit",
+      "mimetype": "image/jpeg",
+      "destination": "uploads/",
+      "filename": "9fd8296cfa867de9bc4e882c0e98634c",
+      "path": "uploads/9fd8296cfa867de9bc4e882c0e98634c",
+      "size": 1610110
+    }
+  },
+  {
+    "id": "70543acc-ef87-4540-b369-787ba1b04e01",
+    "text": {
+      "name": "Daniel",
+      "link": "https://www.google.se/?hl=sv",
+      "prio": "5",
+      "comment": "test"
+    },
+    "file": {
+      "fieldname": "image",
+      "originalname": "IMG_0970.jpg",
+      "encoding": "7bit",
+      "mimetype": "image/jpeg",
+      "destination": "uploads/",
+      "filename": "IMG_0970.jpg",
+      "path": "uploads/IMG_0970.jpg",
+      "size": 1610110
+    }
+  },
+  {
+    "id": "d7f84090-d94d-453a-924b-3f9e9ebb7603",
+    "text": {
+      "name": "test",
+      "link": "https://www.google.se/?hl=sv",
+      "prio": "5",
+      "comment": "Säng"
+    },
+    "file": {
+      "fieldname": "image",
+      "originalname": "Screenshot 2020-06-14 at 00.04.11.png",
+      "encoding": "7bit",
+      "mimetype": "image/png",
+      "destination": "uploads/",
+      "filename": "Screenshot 2020-06-14 at 00.04.11.png",
+      "path": "uploads/Screenshot 2020-06-14 at 00.04.11.png",
+      "size": 3316128
+    }
+  },
+  {
+    "id": "46326f7e-41db-4f6c-bd40-8e00bbd15409",
+    "text": {
+      "name": "EMIL",
+      "link": "https://www.google.se/?hl=sv",
+      "prio": "5",
+      "comment": "TEST"
+    },
+    "file": {
+      "fieldname": "image",
+      "originalname": "IMG_0970.jpg",
+      "encoding": "7bit",
+      "mimetype": "image/jpeg",
+      "destination": "uploads/",
+      "filename": "IMG_0970.jpg",
+      "path": "uploads/IMG_0970.jpg",
+      "size": 1610110
+    }
+  }
+]
