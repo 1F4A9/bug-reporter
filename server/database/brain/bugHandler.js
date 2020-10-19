@@ -8,8 +8,9 @@ exports.create = (req, res) => {
   const file = req.file;
   const bug = {
     id: uuid(),
-    text: body,
-    file: file,
+    image: file.originalname,
+    status: 'not started',
+    ...body
   };
 
   entries.push(bug);
@@ -30,7 +31,27 @@ exports.getImage = (req, res) => {
   res
     .status(200)
     .sendFile(
-      path.join(__dirname, `../../uploads/${theBug.file.originalname}`)
+      path.join(__dirname, `../../uploads/${theBug.image}`)
     );
   // res.status(200).json({ filename: "me", fileURL: "IMG_0970.jpg" });
 };
+
+
+exports.deleteBug = (req, res) => {
+  const id = req.params.id;
+
+  if (!id) return res.status(400).send('id not found');
+
+  const index = entries.findIndex(obj => obj.id === id);
+  entries.splice(index, 1);
+
+  save()
+    .then(() => {
+      res.status(204).end();
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).end();
+    });
+
+}

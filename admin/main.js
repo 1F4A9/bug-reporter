@@ -1,8 +1,58 @@
-import { data } from '../server/data.js';
+function initializer() {
+  readTextFile('../server/database/store/bugs.json')
+    .then(json => JSON.parse(json))
+    .then(data => reformatObject(data))
+    .then(data => {
+      if (!data.length) return console.log('beepboop') // no available bugs
 
-generateTable();
+      generateTable(data);
+
+      console.log(data)
+    })
+}
+
+initializer();
+
+function readTextFile(path) {
+  return new Promise((resolve, reject) => {
+    let rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", path, true);
+    rawFile.onreadystatechange = function () {
+      if (rawFile.readyState === 4 && rawFile.status == "200" && rawFile.responseText !== '') {
+        resolve(rawFile.responseText);
+      }
+    }
+    rawFile.send(null);
+  });
+}
+
+function reformatObject(array) {
+  return array.map(obj => {
+    let newObj = {};
+
+    // current format used on the frontend
+    newObj['name'] = obj.name;
+    newObj['comment'] = obj.comment;
+    newObj['image'] = obj.image;
+    newObj['link'] = obj.link;
+    newObj['status'] = obj.status;
+    newObj['priority'] = obj.priority;
+    newObj['id'] = obj.id;
+
+    return newObj;
+  });
+}
+
+function validateProperty() {
+  const textNode = document.createTextNode('user provided no data');
+
+  return textNode;
+}
 
 function createHyperlink(value) {
+  if (!value) return validateProperty(value);
+
   const a = document.createElement("a");
   const textNode = document.createTextNode(value);
 
@@ -13,7 +63,16 @@ function createHyperlink(value) {
   return a;
 }
 
-function createButtons(tr) {
+function createImageHyperlink(value, id) {
+  let aElement = createHyperlink(value);
+
+  // overwrite current href
+  aElement.setAttribute("href", `http://localhost:5000/image/${id}`);
+
+  return aElement;
+}
+
+function createButtons(tr, id) {
   const AMOUNT_OF_BUTTONS = 2;
   const NAME_OF_BUTTONS = ['Edit', 'Delete'];
 
@@ -25,7 +84,7 @@ function createButtons(tr) {
     if (NAME_OF_BUTTONS[i] === 'Edit') {
       button.addEventListener('click', (e) => onEdit(e));
     } else {
-      button.addEventListener('click', (e) => onDelete(e));
+      button.addEventListener('click', (e) => onDelete(e, id));
     }
 
     button.appendChild(textNode)
@@ -71,12 +130,23 @@ function onEdit(e) {
   });
 }
 
-function onDelete(e) {
+function onDelete(e, id) {
+  // Delete on frontend
   const trElement = e.target.parentNode.parentNode;
   trElement.remove();
+
+  // Delete on server
+  httpRequest = new XMLHttpRequest();
+
+  if (!httpRequest) {
+    alert('Download a modern browser!');
+  }
+
+  httpRequest.open('DELETE', `http://localhost:5000/${id}`);
+  httpRequest.send();
 }
 
-function generateTable() {
+function generateTable(data) {
   const table = document.getElementById("table-tbody");
 
   for (let obj of data) {
@@ -85,7 +155,7 @@ function generateTable() {
     for (let property in obj) {
 
       // Won´t add ID as a td row.
-      if (property !== '_id') {
+      if (property !== 'id') {
         const td = document.createElement('td');
 
         const textNode = document.createTextNode(obj[property]);
@@ -94,9 +164,13 @@ function generateTable() {
           td.classList.add('edit');
         }
 
-        if (property === 'link' || property === 'image') {
+        if (property === 'link') {
           td.appendChild(createHyperlink(obj[property]));
-        } else {
+        }
+        else if (property === 'image') {
+          td.appendChild(createImageHyperlink(obj[property], obj['id']));
+        }
+        else {
           td.appendChild(textNode);
         }
 
@@ -104,7 +178,7 @@ function generateTable() {
       }
     }
 
-    createButtons(tr);
+    createButtons(tr, obj['id']);
 
     table.appendChild(tr);
   }

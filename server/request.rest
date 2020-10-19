@@ -1,1 +1,1 @@
-GET http://localhost:5000/image/d7f84090-d94d-453a-924b-3f9e9ebb7603 HTTP/1.1
+GET http://localhost:5000/image/224daa1c-10a0-4c64-a4db-11e27a6b7c77 HTTP/1.1

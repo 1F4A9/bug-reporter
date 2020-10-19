@@ -1,10 +1,14 @@
 const express = require("express");
 const multer = require("multer");
 const uuid = require("uuid").v4;
+const cors = require('cors');
+
 
 const app = express();
 const port = 5000;
 
+// middleware
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -29,6 +33,7 @@ const Bugs = require("./database/brain/bugHandler");
 
 app.post("/bug", upload, Bugs.create);
 app.get("/image/:id", Bugs.getImage);
+app.delete("/:id", Bugs.deleteBug);
 
 app.listen(port, () => {
   console.log(`Server started on Localhost:${port}`);
