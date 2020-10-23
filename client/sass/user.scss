@@ -1,0 +1,208 @@
+@import 'normalize';
+
+%flexCC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexColumnCC {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+%absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+$light-green: #929776;
+$gray-green: #c8c5b4;
+$beige-green: #d9cba0;
+$dark-green: #545c4a;
+$red-green: #af8a7a;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $light-green;
+  @extend %flexColumnCC;
+
+  .main {
+    width: 50%;
+    height: 90%;
+    background-color: $gray-green;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 30px 0px rgba(0, 0, 0, 0.5);
+
+    &__header {
+      width: 100%;
+      height: 10%;
+      @extend %flexCC;
+      //   background-color: $red-green;
+
+      h2 {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    &__form {
+      width: 100%;
+      height: 90%;
+      //   background-color: $beige-green;
+      @extend %flexCC;
+
+      &--item {
+        width: 100%;
+        height: 12%;
+        margin: 5px;
+        // @extend %flexCC;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid black;
+
+        &:nth-last-child(2) {
+          height: 30%;
+          padding-top: 1rem;
+          display: flex;
+          align-items: flex-start;
+
+          .main__form--item--divider {
+            width: 1px;
+            height: 25%;
+            background-color: black;
+          }
+        }
+
+        &--divider {
+          width: 1px;
+          height: 50%;
+          background-color: black;
+        }
+
+        &:last-child {
+          @extend %flexCC;
+          border: none;
+
+          .main__form__submit {
+            height: 80%;
+            width: 95%;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            background-color: $dark-green;
+            border-radius: 0.5rem;
+
+            &:hover {
+              background-color: $red-green;
+            }
+          }
+        }
+
+        &--customselect {
+          margin-left: 20px;
+          width: 70%;
+          height: 80%;
+
+          border: none;
+          position: relative;
+
+          select {
+            border-radius: 3px;
+            height: 100%;
+            width: 100%;
+            border: none;
+            background-color: transparent;
+          }
+
+          &--arrows {
+            display: block;
+            background-color: $dark-green;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+
+            height: 100%;
+            width: 2rem;
+            pointer-events: none;
+
+            &::before,
+            &::after {
+              --size: 0.5em;
+              content: "";
+              position: absolute;
+              width: 0;
+              height: 0;
+
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+
+            &::before {
+              border-left: var(--size) solid transparent;
+              border-right: var(--size) solid transparent;
+              border-bottom: var(--size) solid $gray-green;
+              top: 40%;
+            }
+
+            &::after {
+              border-left: var(--size) solid transparent;
+              border-right: var(--size) solid transparent;
+              border-top: var(--size) solid $gray-green;
+              top: 63%;
+            }
+          }
+        }
+      }
+
+      form {
+        width: 90%;
+        height: 90%;
+
+        label {
+          min-width: 15%;
+          padding: 0 1rem;
+          font-weight: bold;
+        }
+
+        input {
+          margin-left: 20px;
+          width: 70%;
+          height: 80%;
+          background-color: transparent;
+          border: none;
+        }
+        textarea {
+          margin-left: 20px;
+          width: 70%;
+          height: 80%;
+          resize: none;
+          background-color: transparent;
+          border: none;
+        }
+        input,
+        textarea,
+        select {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

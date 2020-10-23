@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+  <link rel="stylesheet" href="./sass/user.scss">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+  <script src="./js/user.js" defer></script>
+  <title>user</title>
+</head>
+
+<body>
+  <div class="main__header">
+    <h2>BUG-Reporter</h2>
+  </div>
+  <div class="main__form">
+    <form>
+      <div class="main__form--item">
+        <label for="name"> Name:</label>
+        <div class="main__form--item--divider"></div>
+        <input name="name" id="name" type="text" placeholder="Namnge felet:" /></br>
+      </div>
+      <div class="main__form--item">
+        <label for="link"> Link:</label>
+        <div class="main__form--item--divider"></div>
+        <input name="link" id="link" type="url" placeholder="Länken till där felet uppstod, (http://www...)" /></br>
+      </div>
+      <div class="main__form--item">
+        <label for="image"> Image:</label>
+        <div class="main__form--item--divider"></div>
+        <input name="image" id="image" type="file" accept="image/*" /></br>
+      </div>
+      <div class="main__form--item">
+        <label for="prio"> Prio:</label>
+        <div class="main__form--item--divider"></div>
+        <div class="main__form--item--customselect">
+          <select name="priority" id="prio">
+            <option value="">--Hur hög priorotet har felet?--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select></br>
+          <span class="main__form--item--customselect--arrows"></span>
+        </div>
+      </div>
+      <div class="main__form--item">
+        <label for="comment"> Comment:</label>
+        <div class="main__form--item--divider"></div>
+        <textarea name="comment" id="comment" placeholder="Beskriv felet..."></textarea></br>
+      </div>
+      <div class="main__form--item">
+        <button class="main__form__submit" type="submit" value="Send"> Send </button>
+      </div>
+    </form>
+  </div>
+  </div>
+</body>
+
+</html>
