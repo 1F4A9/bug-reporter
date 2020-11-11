@@ -1,5 +1,5 @@
 # Bug reporter
-Users can submit webpage bugs with links, pictures and internal information.<br/>
+Users can submit bugs with links, pictures and internal information.<br/>
 Admin can view, solve and change status on the bug.<br/>
 Data is stored in a json-file and the images in a local folder.
 
