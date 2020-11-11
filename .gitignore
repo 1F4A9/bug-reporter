@@ -3,3 +3,4 @@ dist
 .cache
 server/dist
 server/.cache
+server/config/.env

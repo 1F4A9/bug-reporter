@@ -2,6 +2,9 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const Bundler = require('parcel-bundler');
+const dotenv = require('dotenv');
+
+dotenv.config({ path: path.join(__dirname, '/config/.env') });
 
 const { buildStart, buildEnd } = require('./utils/events');
 
