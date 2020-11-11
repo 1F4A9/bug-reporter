@@ -1,8 +1,7 @@
 # Bug reporter
 Users can submit webpage bugs with links, pictures and internal information.<br/>
 Admin can view, solve and change status on the bug.<br/>
-Data is stored in a json-file.<br/>
-Images is stored in a local folder.
+Data is stored in a json-file and the images in a local folder.
 
 ## Running
 - Change `./server/.env.sample` to `./server/.env`.
